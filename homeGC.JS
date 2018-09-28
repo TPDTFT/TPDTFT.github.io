@@ -9,10 +9,10 @@
 				query1.setQuery('SELECT A,B,C ');
 				query1.send(handleQueryResponse2);
 				var query2 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1aNaanZtuiLRPfobuLDb8bvxsEcNyzC114PW70GW8nwk&sheet=SP');
-				query2.setQuery('SELECT A,C');
+				query2.setQuery('SELECT A,B');
 				query2.send(handleQueryResponse3);
 				var query3 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1aNaanZtuiLRPfobuLDb8bvxsEcNyzC114PW70GW8nwk&sheet=PSP');
-				query3.setQuery('SELECT A,C');
+				query3.setQuery('SELECT A,B');
 				query3.send(handleQueryResponse4);
 			
 		}				
