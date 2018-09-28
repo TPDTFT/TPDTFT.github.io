@@ -11,7 +11,7 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
-<body class="w3-light-grey" onload="drawGID()" >
+<body class="w3-light-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
@@ -180,10 +180,10 @@ function w3_close() {
 				query1.setQuery('SELECT A,B,C ');
 				query1.send(handleQueryResponse2);
 				var query2 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1aNaanZtuiLRPfobuLDb8bvxsEcNyzC114PW70GW8nwk&sheet=SP');
-				query2.setQuery('SELECT A,C');
+				query2.setQuery('SELECT A,B');
 				query2.send(handleQueryResponse3);
 				var query3 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1aNaanZtuiLRPfobuLDb8bvxsEcNyzC114PW70GW8nwk&sheet=PSP');
-				query3.setQuery('SELECT A,C');
+				query3.setQuery('SELECT A,B');
 				query3.send(handleQueryResponse4);
 			
 		}				
