@@ -2,7 +2,6 @@ body
 {
     background-repeat: no-repeat;
 	background-position: center;	
-	background-image: url("img/Liberty-Global.PNG");
 	display: grid;
 	
 	grid-template-areas:
