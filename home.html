@@ -6,9 +6,7 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 
-<script type="text/javascript" src="js/homeGC.js"></script>
-<script type="text/javascript" src="js/homeSprint.js"></script>
-<script type="text/javascript" src="js/homeMap.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -110,7 +108,204 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
       <li class="w3-padding-16">
     <h5><strong>Defects count for all countries</strong></h5>
+	<script>
+	google.charts.load('current', {packages: ['corechart', 'bar']});
+
+	google.charts.setOnLoadCallback(drawGID); 
+	function drawGID()
+		{
+				var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,B,C ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,B,C ');
+				query1.send(handleQueryResponse2);
+				var query2 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=SP');
+				query2.setQuery('SELECT A,B');
+				query2.send(handleQueryResponse3);
+				var query3 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=PSP');
+				query3.setQuery('SELECT A,B');
+				query3.send(handleQueryResponse4);
+			
+		}				
+function handleQueryResponse(response) 
+		{
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var materialOptions = 
+				{
+					width:900,
+                     height:300,
+				animation: {
+								duration: 1000,
+								easing: 'out',
+								startup: true
+							},	
+					 
+					
+						title : 'Count based on status',
+						
+					
+					
 		
+					hAxis: 
+					{
+						title: 'Status',
+						minValue: 0,
+						
+					},
+					vAxis: 
+					{
+						title: 'Defect'	,
+						
+					},
+					backgroundColor: { fill:'transparent' },
+					
+				};
+				
+				materialChart = new google.visualization.ColumnChart(document.getElementById('Status_Chart'));
+				//materialChart = new google.charts.Bar(document.getElementById('Status_Chart'));
+				
+				materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+  
+		}
+   
+		
+			function handleQueryResponse2(response) 
+		{
+
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var materialOptions = 
+				{
+					width:900,
+                     height:300,
+				animation: {
+								duration: 1000,
+								easing: 'out',
+								startup: true
+							},	
+					
+						title: 'Count based on priority',
+						
+					
+		
+					hAxis: 
+					{
+						title: 'Priority',
+						minValue: 0,
+						
+					},
+					vAxis: 
+					{
+						title: 'Defect'	,
+						
+					
+					
+					},
+	
+					backgroundColor:
+					{ 
+					fill:'transparent',
+					//stroke: '#00001a',
+					//strokeWidth: 2					
+					},
+				};
+				var materialChart = new google.visualization.ColumnChart(document.getElementById('Priority_chart'));
+				//var materialChart = new google.charts.Bar(document.getElementById('Priority_chart'));
+				materialChart.draw(data,  google.charts.Bar.convertOptions(materialOptions));
+  
+		}
+		function handleQueryResponse3(response) 
+		{
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var options = 
+				{
+			
+					title: 'Overall',
+					pieHole: 0.4,
+					//is3D: true,
+					backgroundColor: {
+					fill:'transparent',
+					
+					},
+					
+					//legendTextStyle: { color: '#FFF' },
+					//titleTextStyle: { color: '#FFF' },
+				}
+			var chart = new google.visualization.PieChart(document.getElementById('AllPie_Chart'));
+			chart.draw(data, options);
+  
+		}
+	 
+		
+		function handleQueryResponse4(response) 
+		{
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var options = 
+				{
+					title: 'Prodapt',
+					pieHole: 0.4,
+					//is3D: true,
+					backgroundColor: { fill:'transparent' },
+	
+					//legendTextStyle: { color: '#FFF' },
+					//titleTextStyle: { color: '#FFF' },
+				}
+			var chart = new google.visualization.PieChart(document.getElementById('ProdaptPie_Chart'));
+			chart.draw(data, options);
+  
+		}
+		
+		function drawVisualization() {
+      var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=GEOMAP');
+				query.setQuery('SELECT A,B,C ');
+				query.send(handleQueryResponse);
+function handleQueryResponse(response)
+{
+	if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+      var options = {
+		  
+        sizeAxis: { minValue: 10, maxValue: 20 },
+        region: '150',
+		datalessRegionColor: 'lightgrey',
+          defaultColor: '#81d4fa',
+		   backgroundColor: 'white',
+        colorAxis: {colors: ['orange', 'red']} // orange to blue
+      };
+
+       
+        var geochart2 = new google.visualization.GeoChart(
+          document.getElementById('visualization'));
+        geochart2.draw(data,options);
+      }
+	  }
+
+google.setOnLoadCallback(drawVisualization);
+</script>	
 	<div id="Status_Chart" class="barChart "></div>
 	
 	<div id="Priority_chart" class="barChart "></div>
@@ -119,11 +314,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <hr>
   <div class="w3-container"" >
- 
+  
    <h5><strong>Open Defects</strong></h5>
+  
    <ul class="w3-ul w3-card-4 w3-white" >
 
       <li class="w3-padding-16 ">
+	
     <div id="visualization" style="width: 900px; height: 500px;"></div>
 	</ul>
 
@@ -159,6 +356,180 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
  
  <div class="w3-container">
+ <script>
+ google.charts.load('current', {packages: ['corechart', 'bar']});
+	function change()
+ {
+    var listbox = document.getElementById("chart");
+    var selIndex = listbox.selectedIndex;
+    var selValue = listbox.options[selIndex].value;
+    var selText = listbox.options[selIndex].text;
+    console.log(selValue);
+	google.charts.setOnLoadCallback(drawGID);
+	
+	
+		function drawGID()
+		{
+		if (selValue == 'Sprint-171')
+		{
+		
+        
+      
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,D,E ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,D,E ');
+				query1.send(handleQueryResponse2);
+
+	  
+		}
+		else if (selValue == 'Sprint-172')
+		{
+		
+        
+		var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,F,G ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,F,G ');
+				query1.send(handleQueryResponse2);
+		
+	  
+		}
+		else if (selValue == 'Sprint-173')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,H,I ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,H,I ');
+				query1.send(handleQueryResponse2);
+			
+		}
+		else if (selValue == 'Sprint-174')
+		{var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,J,K ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,J,K ');
+				query1.send(handleQueryResponse2);
+			
+			
+		}else if (selValue == 'Sprint-175')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,L,M ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,L,M ');
+				query1.send(handleQueryResponse2);
+		}
+		
+		
+		}
+
+		function handleQueryResponse(response) 
+		{
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var materialOptions = 
+				{
+					width:900,
+                     height:300,
+				animation: {
+								duration: 1000,
+								easing: 'out',
+								startup: true
+							},		  
+					
+						title: 'Defect count based on Status',
+						 
+						
+					
+		
+					hAxis: 
+					{
+						title: 'Status',
+						minValue: 0,
+						
+					},
+					vAxis: 
+					{
+						title: 'Defect'	,
+						
+					},
+					backgroundColor: { fill:'transparent' },
+					
+				};
+				 var materialChart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+			//	var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+				materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+  
+		}
+		
+			function handleQueryResponse2(response) 
+		{
+				if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+				var data = response.getDataTable();
+				var materialOptions = 
+				{
+					width:900,
+                     height:300,
+					 animation: {
+								duration: 1000,
+								easing: 'out',
+								startup: true
+							},
+					
+						title: 'Defect count based on Priority',
+						 
+				
+		
+					hAxis: 
+					{
+						title: 'Priority',
+						minValue: 0,
+						
+					},
+					vAxis: 
+					{
+						title: 'Defect'	,
+						
+					
+					
+					},
+	
+					backgroundColor:
+					{ 
+					fill:'transparent',
+					//stroke: '#00001a',
+					//strokeWidth: 2					
+					},
+					
+					
+					
+					
+
+				};
+				 var materialChart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+				//var materialChart = new google.charts.Bar(document.getElementById('chart_div2'));
+				materialChart.draw(data,  google.charts.Bar.convertOptions(materialOptions));
+  
+		}
+
+	 
+		}
+		
+ </script>
 <h5><strong>Sprint report</strong></h5>
     <ul class="w3-ul w3-card-4 w3-white">
 
@@ -260,6 +631,8 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
+
+      
 </script>
 
 </html>
