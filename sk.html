@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<title>Defect Report</title>
+<link rel="icon" href="img/UM.png">
+<meta charset="UTF-8">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/skGC.js"></script>
+<script type="text/javascript" src="js/skSprint.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey" >
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right"><a href="http://www.prodapt.com/" target="_blank"><img src="img/prodapt-logo.png" style="width:90px"></a></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="img/slovakia.png" class="w3-circle w3-margin-right" style="width:65px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span><strong>TPD TFT DEFECT REPORT</strong></span><br>
+      
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Countries</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-home fa-fw"></i>  Home</a>
+    <a href="at.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-flag fa-fw"></i>  Austria</a>
+    <a href="ch.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-flag fa-fw"></i>  Switzerland</a>
+    <a href="nl.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-flag fa-fw"></i>  Netherlands</a>
+    <a href="ie.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-flag fa-fw"></i>  Ireland</a>
+    <a href="pl.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-flag fa-fw"></i>  Poland</a>
+    <a href="sk.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-flag fa-fw"></i>  Slovakia</a>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b>SLOVAKIA DEFECT REPORT</b></h5>
+  </header>
+ <div  class="w3-container" >
+  <ul class="w3-ul w3-card-4 w3-white">
+
+      <li class="w3-padding-16">
+		
+	<div id="Status_Chart" class="barChart "></div>
+	
+	<div id="Priority_chart" class="barChart "></div>
+	</li>
+	</ul>
+  </div>
+  <hr>
+    <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:9 -16px">
+	  <h5><strong>Open defects vs. Priority</strong> <h5>
+      <div class="w3-third">
+	  		<div  id="AllPie_Chart" style="width: 500px; height: 300px;" > </div>
+      </div>
+      <div class="w3-twothird">
+       		<div  id="ProdaptPie_Chart" style="width: 500px; height: 300px;" > </div>
+
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div class="w3-container">
+ 
+    <table>
+      <tr>
+        <td><strong>Basic Report :</strong>
+		<a  class="w3-button w3"  onclick="window.open('PrintPages/PrintSK.html')">
+		<strong><i class="fa fa-bar-chart">  </i> Get Report </strong>
+		</a>
+		</td>
+      </tr>
+    </table>
+
+ </div> 
+ 
+ <!--
+ <div class="w3-container">
+<h5><strong>Sprint report</strong></h5>
+    <ul class="w3-ul w3-card-4 w3-white">
+
+      <li class="w3-padding-16">
+      Defect reoprt for  <select id="chart" name='select1' onchange="change()">
+				<option selected="true" disabled="disabled">Select sprint </option> 
+				<option value="Sprint-171">Sprint-171</option> 
+				<option value="Sprint-172">Sprint-172</option> 
+				<option value="Sprint-173">Sprint-173</option> 
+				<option value="Sprint-174">Sprint-174</option> 
+				<option value="Sprint-175">Sprint-175</option> 
+				
+
+			</select>
+<div id="chart_div" ></div>
+<div id="chart_div2" ></div>
+			
+      </li>
+    </ul>
+  </div>
+  <hr>
+-->
+  <!-- Footer -->
+ <footer class="w3-container">
+     <h5 class="w3-bottombar w3-border-black"></h5>
+	 
+
+  <div style="text-align:center">
+   <span style="float:left"><i class="fa fa-filter" ></i ><a  style="text-decoration:none" href="https://jira.lgi.io/issues/?filter=63623" target="_blank" >jira filer </a> |<a onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;"> <i class="fa fa-envelope" ></i>contact </a></span>
+    <span style="float:right"> <i class="fa fa-copyright">  </i> Designed by SDIl TPD TFT team</span>
+	
+</div>
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+  <header class="w3-container w3-black"> 
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h5><strong>Team contact info </strong></h5>
+    </header>
+
+	 <div class="w3-container">
+	 <table>
+	 <tr>
+        <td><font color="red"><strong>Nico </strong></font></td> <td> <strong> :  </strong></td> <td> nrautenbach@libertyglobal.com </td>
+	</tr>
+	<tr>
+       <td><font color="red"><strong>Deepak </strong></font></td> <td><strong> :  </strong></td> <td> dejayagopal.contractor@libertyglobal.com </td>
+	</tr>
+	<tr>
+	<td><font color="red"><strong>Padmanaban </strong></font></td> <td> <strong> :  </strong></td> <td> pganapathy.contractor@libertyglobal.com</td>
+	</tr>
+	<tr>
+	<td><font color="red"><strong>Poornima </strong></font></td> <td> <strong> :  </strong></td> <td> poprabakaran.contractor@libertyglobal.com </td>
+    </tr>
+	<tr>
+	<td><font color="red"><strong>Manoj </strong></font></td> <td> <strong> :  </strong></td> <td> mdevadas.contractor@libertyglobal.com</td>
+	</tr>
+	
+	</table>
+	</div>
+	<footer class="w3-container w3-black">
+	<h5 class="w3-bottombar w3-border-black"></h5>
+      </footer>
+    </div>
+	
+  </div>
+  
+  
+  </footer>
+
+  <!-- End page content -->
+</div>
+</body>
+<script>
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</html>
