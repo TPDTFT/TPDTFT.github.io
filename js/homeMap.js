@@ -30,6 +30,6 @@ function handleQueryResponse(response)
       }
 	  }
 
-
-      google.setOnLoadCallback(drawVisualization);
+google.setOnLoadCallback(drawVisualization);
+      
     
