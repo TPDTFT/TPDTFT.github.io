@@ -66,6 +66,15 @@
 				query1.setQuery('SELECT A,L,M ');
 				query1.send(handleQueryResponse2);
 		}
+		else if (selValue == 'Sprint-176')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,N,O ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,N,O ');
+				query1.send(handleQueryResponse2);
+		}
 		
 		
 		}

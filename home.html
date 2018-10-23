@@ -44,11 +44,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="home.html" class="w3-bar-item w3-button w3-padding w3-blue" ><i class="fa fa-home fa-fw"></i>  Home</a>
     <a href="at.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Austria</a>
-    <a href="ch.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Switzerland</a>
-    <a href="nl.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Netherlands</a>
     <a href="ie.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Ireland</a>
+    <a href="nl.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Netherlands</a>
     <a href="pl.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Poland</a>
     <a href="sk.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Slovakia</a>
+	<a href="ch.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-flag fa-fw"></i>  Switzerland</a>
   </div>
 </nav>
 
@@ -80,7 +80,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </tr>
           <tr>
             <td><i class="fa fa-users w3-text-blue w3-large"></i></td>
-            <td>Deepak </td>
+            <td>DeeJay </td>
             <td><i>SDIL Test Lead</i></td>
           </tr>
           <tr>
@@ -121,19 +121,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container"" >
  
    <h5><strong>Open Defects</strong></h5>
-   <ul class="w3-ul w3-card-4 w3-white" >
+  
+	<ul class="w3-ul w3-card-4 w3-white" >
 
       <li class="w3-padding-16 ">
-    <div id="visualization" style="width: 900px; height: 500px;"></div>
-	</ul>
+    <div id="visualization" style="width: 1000px; height: 450px;"  ></div>
+	</li>
+	</ul> 
 
-      </li>
+      
  </div> 
 
   <hr>
-  <div class="w3-panel">
+
+  <div class="w3-container">
     <div class="w3-row-padding" style="margin:9 -16px">
 	  <h5><strong>Open defects vs. Priority</strong> <h5>
+	 
       <div class="w3-third">
 	  		<div  id="AllPie_Chart" style="width: 500px; height: 300px;" > </div>
       </div>
@@ -170,6 +174,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 				<option value="Sprint-173">Sprint-173</option> 
 				<option value="Sprint-174">Sprint-174</option> 
 				<option value="Sprint-175">Sprint-175</option> 
+				<option value="Sprint-176">Sprint-176</option> 
 				
 
 			</select>
@@ -209,7 +214,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <td><strong>Nico </strong></td> <td> <strong> :  </strong></td> <td> nrautenbach@libertyglobal.com </td>
 	</tr>
 	<tr>
-       <td><strong>Deepak </strong></td> <td><strong> :  </strong></td> <td> dejayagopal.contractor@libertyglobal.com </td>
+       <td><strong>DeeJay </strong></td> <td><strong> :  </strong></td> <td> dejayagopal.contractor@libertyglobal.com </td>
 	</tr>
 	<tr>
 	<td><strong>Padmanaban </strong></td> <td> <strong> :  </strong></td> <td> pganapathy.contractor@libertyglobal.com</td>
@@ -391,6 +396,7 @@ function handleQueryResponse(response)
 				{
 			
 					title: 'Overall',
+					slices: {0: {color: '#7c0000'}, 1:{color: 'red'}, 2:{color: 'orange'}, 3: {color: 'green'}},
 					pieHole: 0.4,
 					//is3D: true,
 					backgroundColor: {
@@ -418,6 +424,8 @@ function handleQueryResponse(response)
 				var options = 
 				{
 					title: 'Prodapt',
+					slices: {0: {color: '#7c0000'}, 1:{color: 'red'}, 2:{color: 'orange'}, 3: {color: 'green'}},
+
 					pieHole: 0.4,
 					//is3D: true,
 					backgroundColor: { fill:'transparent' },
@@ -441,7 +449,7 @@ function handleQueryResponse(response)
 		  
         sizeAxis: { minValue: 10, maxValue: 20 },
         region: '150',
-		datalessRegionColor: 'lightgrey',
+		datalessRegionColor: '#f9f9f9',
           defaultColor: '#81d4fa',
 		   backgroundColor: 'white',
         colorAxis: {colors: ['orange', 'red']} // orange to blue
