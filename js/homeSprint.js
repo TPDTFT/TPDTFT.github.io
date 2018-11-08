@@ -75,6 +75,15 @@
 				query1.setQuery('SELECT A,N,O ');
 				query1.send(handleQueryResponse2);
 		}
+		else if (selValue == 'Sprint-177')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,P,Q ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,P,Q ');
+				query1.send(handleQueryResponse2);
+		}
 		
 		
 		}
@@ -89,8 +98,8 @@
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					width:"100%",
+                     height:"100%",
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -132,8 +141,8 @@
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					width:"100%",
+                     height:"100%",
 					 animation: {
 								duration: 1000,
 								easing: 'out',

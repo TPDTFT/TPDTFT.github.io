@@ -156,3 +156,52 @@ function handleQueryResponse(response)
 			chart.draw(data, options);
   
 		}
+				 //Count table 
+	  
+	   google.charts.load('current', {'packages':['table']});
+	   	  google.charts.setOnLoadCallback(drawPriorityTable);
+
+      google.charts.setOnLoadCallback(drawTable);
+	  function drawTable()
+		{
+				var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=CH');
+				query.setQuery('SELECT A,B,C ');
+				query.send(drawTableResponse);
+		}
+
+      function drawTableResponse(response) {
+	  if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+	  
+        var data = response.getDataTable();
+       
+
+        var table = new google.visualization.Table(document.getElementById('status_Table'));
+
+        table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
+      }
+	  ///priority
+	  function drawPriorityTable()
+		{
+				var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=CHP');
+				query.setQuery('SELECT A,B,C ');
+				query.send(drawPriorityTableResponse);
+		}
+
+      function drawPriorityTableResponse(response) {
+	  if (response.isError()) 
+				{
+					alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+					return;
+				}
+	  
+        var data = response.getDataTable();
+       
+
+        var table = new google.visualization.Table(document.getElementById('priority_Table'));
+
+        table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
+      }
