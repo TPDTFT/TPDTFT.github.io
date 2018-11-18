@@ -84,6 +84,26 @@
 				query1.setQuery('SELECT A,P,Q ');
 				query1.send(handleQueryResponse2);
 		}
+		else if (selValue == 'Sprint-178')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,R,S ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,R,S ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-179')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,T,U ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,T,U ');
+				query1.send(handleQueryResponse2);
+		}
+		
+		
 		
 		
 		}
