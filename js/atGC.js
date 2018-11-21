@@ -26,8 +26,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					 width: '100%', height: '100%',
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -69,8 +68,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					 width: '100%', height: '100%',
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -117,7 +115,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var options = 
 				{
-					title: 'Overall',
+					title: 'Open Defects - Overall',
 					pieHole: 0.4,
 					//is3D: true,
 					backgroundColor: {
@@ -143,7 +141,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var options = 
 				{
-					title: 'Prodapt',
+					title: 'Open Defects - Prodapt',
 					pieHole: 0.4,
 					//is3D: true,
 					backgroundColor: { fill:'transparent' },

@@ -118,8 +118,8 @@
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					width:"100%",
+                     height:"100%",
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -161,8 +161,8 @@
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					width:"100%",
+                     height:"100%",
 					 animation: {
 								duration: 1000,
 								easing: 'out',

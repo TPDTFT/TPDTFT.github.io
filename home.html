@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Defect Report</title>
+<title>TPD-TFT Defects</title>
 <link rel="icon" href="img/UM.png">
 <meta charset="UTF-8">
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -21,12 +21,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-blue" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-blue" onclick="w3_open();" style="color:red;"><i class="fa fa-bars" style="color:red;"></i>  Menu</button>
   
   <span class="w3-bar-item "><a href="http://www.prodapt.com/" target="_blank"><img src="img/prodapt-logo.png" style="width:90px"></a></span>
        
   <span class="w3-bar-item w3-right">
-  <a   onclick="window.open('PrintPages/PrintHome.html')" style="cursor: pointer;"  ><i class="fa fa-line-chart" style="font-size:25px;color:red;" title='Basic chart'> &nbsp;</i ></a>
+  <a   onclick="window.open('PrintPages/PrintHome.html')" style="cursor: pointer;"  ><i class="fa fa-line-chart" style="font-size:25px;color:red;" title='Basic Report'> &nbsp;</i ></a>
   <a   href="https://jira.lgi.io/issues/?filter=63623" target="_blank" title='Jira filter'><i class="fa fa-filter"   style="font-size:25px;color:red;"> &nbsp; </i > </a>
   </span>
 	
@@ -110,7 +110,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     </div>
   </div>
-  
+</div>  
   <hr>
   <div  class="w3-container" >
   <ul class="w3-ul w3-card-4  " >
@@ -118,9 +118,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <li class="w3-padding-16 "  >
     <h5><strong>Defects count for all countries</strong></h5>
 		
-	<div id="Status_Chart" class="barChart " ></div>
+	<div id="Status_Chart" ></div>
 	
-	<div id="Priority_chart" class="barChart "></div>
+	<div id="Priority_chart" ></div>
 	
 	
 	</li>
@@ -147,7 +147,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-half">
 	  <div id="priority_Table"></div>
 	  </div>
-	  
+	  </div>
+	  </div>
       </li>
     </ul>
   </div>
@@ -186,7 +187,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 				<option value="Sprint-175">Sprint-175</option> 
 				<option value="Sprint-176">Sprint-176</option> 
 				<option value="Sprint-177">Sprint-177</option> 
-				<option value="Sprint-178" disabled>Sprint-178</option> 
+				<option value="Sprint-178" >Sprint-178</option> 
 				<option value="Sprint-179" disabled>Sprint-179</option>
 				
 
@@ -211,19 +212,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
    <i class="fa fa-info-circle">  </i><font >  Last updated :  <a id='data'></a>&nbsp;</font> 
 
    </span>
-    <span style="float:right"> <i class="fa fa-copyright">  </i> Designed by SDIl TPD TFT team</span>
+    <span style="float:right"> <i class="fa fa-copyright">  </i> Designed by SDIL TPD TFT team</span>
 	
 </div>
 
-<div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom">
+<div id="id01" class="w3-modal" >
+    <div class="w3-modal-content w3-animate-zoom" style="width: 450px;">
   <header class="w3-container w3-black"> 
       <span onclick="document.getElementById('id01').style.display='none'" 
       class="w3-button w3-display-topright">&times;</span>
       <h5><strong>Team contact info </strong></h5>
     </header>
 
-	 <div class="w3-container">
+	 <div class="w3-container" >
 	 <table>
 	 <tr>
         <td><strong>Nico </strong></td> <td> <strong> :  </strong></td> <td> nrautenbach@libertyglobal.com </td>
@@ -240,13 +241,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<tr>
 	<td><strong>Manoj </strong></td> <td> <strong> :  </strong></td> <td> mdevadas.contractor@libertyglobal.com</td>
 	</tr>
-	
 	</table>
 	</div>
 	<footer class="w3-container w3-black">
-	<h5 class="w3-bottombar w3-border-black"></h5>
+	<h5 class="w3-bottombar w3-border-black">
+	<a onclick="mailFeedback()" style="cursor: pointer;">Your feedback is greatly appreciated !!!!! <i class="fa fa-envelope" style="font-size:20px;color:red;" title='Feedback'> </i ></a>
+</h5>
       </footer>
     </div>
+	
 	
   </div>
 
@@ -255,7 +258,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- End page content -->
 </div>
-</body>
+</body>	
+<script>
+function mailFeedback() {window.location.href = "mailto:padmanaban.g@prodapt.com;deepak.j@prodapt.com?subject=Feedback about TVAPP defect dashboard.&body=Hi TPD-TFT team !";}
+</script>
+
+
 <script>
 
 // Get the Sidebar
@@ -313,8 +321,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					width: '100%', height: '100%',
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -361,8 +368,7 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
 				var materialOptions = 
 				{
-					width:900,
-                     height:300,
+					 width: '100%', height: '100%',
 				animation: {
 								duration: 1000,
 								easing: 'out',
@@ -463,7 +469,6 @@ function handleQueryResponse(response)
 				var data = response.getDataTable();
       var options = {
 		  
-        sizeAxis: { minValue: 10, maxValue: 20 },
 		backgroundColor: {
 					fill:'transparent',
 					

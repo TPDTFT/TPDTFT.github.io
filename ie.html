@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Defect Report</title>
+<title>TPD-TFT Defects</title>
 <link rel="icon" href="img/UM.png">
 <meta charset="UTF-8">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -21,7 +21,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <span class="w3-bar-item "><a href="http://www.prodapt.com/" target="_blank"><img src="img/prodapt-logo.png" style="width:90px"></a></span>
        
   <span class="w3-bar-item w3-right">
-  <a   onclick="window.open('PrintPages/PrintIE.html)" style="cursor: pointer;"  ><i class="fa fa-line-chart" style="font-size:25px;color:red;" title='Basic chart'> &nbsp;</i ></a>
+  <a   onclick="window.open('PrintPages/PrintIE.html')" style="cursor: pointer;"  ><i class="fa fa-line-chart" style="font-size:25px;color:red;" title='Basic Report'> &nbsp;</i ></a>
   <a   href="https://jira.lgi.io/issues/?filter=63623" target="_blank" title='Jira filter'><i class="fa fa-filter"  style="font-size:25px;color:red;"> &nbsp; </i > </a>
   </span>
 </div>
@@ -121,12 +121,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
    <i class="fa fa-info-circle">  </i><font >  Last updated :  <a id='data'></a>&nbsp;</font> 
 
    </span>
-  <span style="float:right"> <i class="fa fa-copyright">  </i> Designed by SDIl TPD TFT team</span>
+  <span style="float:right"> <i class="fa fa-copyright">  </i> Designed by SDIL TPD TFT team</span>
 	
 </div>
 
 <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-modal-content w3-animate-zoom" style="width: 450px;">
   <header class="w3-container w3-black"> 
       <span onclick="document.getElementById('id01').style.display='none'" 
       class="w3-button w3-display-topright">&times;</span>
@@ -154,7 +154,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</table>
 	</div>
 	<footer class="w3-container w3-black">
-	<h5 class="w3-bottombar w3-border-black"></h5>
+	<h5 class="w3-bottombar w3-border-black">	<a onclick="mailFeedback()" style="cursor: pointer;">Your feedback is greatly appreciated !!!!! <i class="fa fa-envelope" style="font-size:20px;color:red;" title='Feedback'> </i ></a>
+</h5>
       </footer>
     </div>
 	
@@ -165,7 +166,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- End page content -->
 </div>
+
 </body>
+<script>
+function mailFeedback() {window.location.href = "mailto:padmanaban.g@prodapt.com;deepak.j@prodapt.com?subject=Feedback about TVAPP defect dashboard.&body=Hi TPD-TFT team !";}
+</script>
 <script>
 
 // Get the Sidebar
