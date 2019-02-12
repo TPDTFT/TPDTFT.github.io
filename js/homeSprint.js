@@ -102,8 +102,96 @@
 				query1.setQuery('SELECT A,T,U ');
 				query1.send(handleQueryResponse2);
 		}
-		
-		
+		else if (selValue == 'Sprint-180')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,V,W ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,V,W ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-181')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,X,Y ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,X,Y ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-182')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,Z,AA ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,Z,AA ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-183')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AB,AC ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AB,AC ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-184')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AD,AE ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AD,AE ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-185')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AF,AG ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AF,AG ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-186')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AH,AI ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AH,AI ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-187')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AJ,AK ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AJ,AK ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-188')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AL,AM ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AL,AM ');
+				query1.send(handleQueryResponse2);
+		}
+		else if (selValue == 'Sprint-189')
+		{
+			var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Status');
+				query.setQuery('SELECT A,AN,AO ');
+				query.send(handleQueryResponse);
+				var query1 = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1WsL07MhF4pWX20EaFUNBx_Aco3sldNIFeGgNNYN3SsE&sheet=Priority');
+				query1.setQuery('SELECT A,AN,AO ');
+				query1.send(handleQueryResponse2);
+		}
 		
 		
 		}
